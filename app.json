@@ -1,0 +1,28 @@
+{
+  "name": "vibe-coding-shopping-mall-api",
+  "description": "Shopping mall API server (monorepo)",
+  "buildpacks": [
+    {
+      "url": "https://github.com/lstoll/heroku-buildpack-monorepo"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "APP_BASE": {
+      "description": "Heroku가 실행할 server 앱이 있는 하위 폴더",
+      "value": "server",
+      "required": true
+    },
+    "NODE_ENV": {
+      "description": "실행 환경",
+      "value": "production"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  }
+}
